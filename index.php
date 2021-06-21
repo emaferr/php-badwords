@@ -1,5 +1,10 @@
 <!-- PHP -->
 <?php
+
+// var_dump($_GET);
+
+$censored_word = $_GET["censored_word"];
+
 // php code
 $lyrics =  'Loro non sanno di che parlo
             Voi siete sporchi fra’ di fango
@@ -12,7 +17,7 @@ $lyrics =  'Loro non sanno di che parlo
             E buonasera signore e signori
 
             Fuori gli attori
-            Vi conviene toccarvi i co*lioni
+            Vi conviene toccarvi i coglioni
             Vi conviene stare zitti e buoni
             Qui la gente è strana tipo spacciatori
             Troppe notti stavo chiuso fuori
@@ -47,12 +52,12 @@ $lyrics =  'Loro non sanno di che parlo
             Siamo fuori di testa ma diversi da loro
             Siamo fuori di testa ma diversi da loro
             Parla la gente purtroppo
-            Parla non sa di che cosa parla
+            Parla non sa di che cazzo parla
             Tu portami dove sto a galla
             Che qui mi manca l’aria
 
             Parla la gente purtroppo
-            Parla non sa di che cosa parla
+            Parla non sa di che cazzo parla
             Tu portami dove sto a galla
             Che qui mi manca l’aria
             Parla la gente purtroppo
@@ -64,7 +69,9 @@ $lyrics =  'Loro non sanno di che parlo
             Siamo fuori di testa ma diversi da loro
             Siamo fuori di testa ma diversi da loro
             Noi siamo diversi da loro';
-            
+
+// var_dump($lyrics);
+
 ?>
 
 <!DOCTYPE html>
@@ -83,9 +90,18 @@ $lyrics =  'Loro non sanno di che parlo
     <h1>The lyrics of the songs</h1>
 
     <p>
-        <?php echo $lyrics?>
+        <?php echo $lyrics;?>
     </p>
     
+    <h1>Song lyrics censored</h1>
+
+    <!-- http://localhost:8888/php/php-badwords/?censored_word=cazzo -->
+    <p>
+        <?php echo str_replace($censored_word, '***', $lyrics);?>
+    </p>
+
+    <h4>Censored word: <?php echo $censored_word;?> </h4>
+
 </body>
 
 </html>
