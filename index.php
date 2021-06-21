@@ -70,6 +70,8 @@ $lyrics =  'Loro non sanno di che parlo
             Siamo fuori di testa ma diversi da loro
             Noi siamo diversi da loro';
 
+$number_of_words_text = count(explode(' ', $lyrics));                
+
 // var_dump($lyrics);
 
 ?>
@@ -92,6 +94,12 @@ $lyrics =  'Loro non sanno di che parlo
     <p>
         <?php echo $lyrics;?>
     </p>
+
+    <h2>Number of words in the text: <?php echo $number_of_words_text;?></h2>
+
+    <h2>Number of characters in the text: <?php echo mb_strlen($lyrics);?></h2>
+
+    <hr>
     
     <h1>Song lyrics censored</h1>
 
